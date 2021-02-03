@@ -1,54 +1,73 @@
+$bgCol: #f3a154;
+$navCol: #ef7547;
+$lightOrange: lighten($navCol, 30%);
+$darkOrange: darken($navCol, 30%);
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -moz-osx-font-smoothing: grayscale;
+}
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace; }
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
 
 .navbar {
-  background-color: #f3a154; }
+  background-color: $bgCol;
+}
 
 .navItem,
 .navButton {
-  background-color: #ef7547; }
-  .navItem a,
-  .navButton a {
-    color: black; }
-
+  background-color: $navCol;
+  a {
+    color: black;
+  }
+}
 .navButton {
   border: none;
-  width: 120%; }
-
+  width: 120%;
+}
 .navItem:hover,
 .navButton:hover,
 .navItemCurrent {
-  background-color: #fbdfd4; }
+  background-color: $lightOrange;
+}
 
 .searchResult {
   border: 2px double whitesmoke;
   border-right: none;
   border-left: none;
   border-top: none;
-  font-size: 1.5rem; }
+  font-size: 1.5rem;
+}
 
 .searchbar {
   width: 100%;
-  font-size: 16pt; }
+  font-size: 16pt;
+}
 
 /*a:link {
   color: $bgCol;
 }*/
+
 a:hover {
-  color: #bf4011; }
+  color: darken($navCol, 20%);
+}
 
 .center {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
-  text-align: center; }
+  text-align: center;
+}
+
+//Homepage
 
 .btn-round {
   border-radius: 20px;
@@ -60,95 +79,120 @@ a:hover {
   padding-right: 20px;
   padding-left: 20px;
   margin: 20px;
-  font-size: 1rem; }
+  font-size: 1rem;
+}
 
 .btn-round:hover {
-  transform: scale(1.2); }
+  transform: scale(1.2);
+}
 
 .banner-blue,
 .banner-orange {
-  border-radius: 8px; }
-  .banner-blue h3,
-  .banner-blue p,
-  .banner-orange h3,
-  .banner-orange p {
-    color: white; }
+  h3,
+  p {
+    color: white;
+  }
+  border-radius: 8px;
+}
 
 .banner-orange {
-  background-image: linear-gradient(to bottom, #f3a154, #f2964f, #f28c4b, #f08049, #ef7547); }
+  background-image: linear-gradient(
+    to bottom,
+    #f3a154,
+    #f2964f,
+    #f28c4b,
+    #f08049,
+    #ef7547
+  );
+}
 
 .banner-blue {
-  background-image: linear-gradient(to bottom, #54d6f3, #2dc7f6, #09b6f8, #22a4f6, #4790ef); }
+  background-image: linear-gradient(
+    to bottom,
+    #54d6f3,
+    #2dc7f6,
+    #09b6f8,
+    #22a4f6,
+    #4790ef
+  );
+}
 
+//Colours
 .orange {
-  color: #ef7547;
-  text-emphasis-color: #ef7547; }
+  color: $navCol;
+  text-emphasis-color: $navCol;
+}
 
 #searchButton,
 #dropdown button {
   border-radius: 0 0 0 0;
-  background-color: #ef7547;
-  border-color: #f3a154;
+  background-color: $navCol;
+  border-color: $bgCol;
   z-index: 1;
   position: relative;
-  color: black; }
+  color: black;
+}
 
 #dropdown button:hover,
 #searchButton:hover {
   border-radius: 0 0 0 0;
-  background-color: #fbdfd4;
-  border-color: #fbdfd4; }
+  background-color: $lightOrange;
+  border-color: $lightOrange;
+}
 
 .btn-darkOrange,
 .btn-lightOrange,
 .btn-orange {
   border-radius: 8px;
-  border: none; }
+  border: none;
+}
 
 .btn-lightOrange {
-  background-color: #fbdfd4; }
+  background-color: $lightOrange;
+}
 
 .btn-lightOrange:hover {
-  background-color: #f3a154; }
+  background-color: $bgCol;
+}
 
 .btn-darkOrange {
-  background-color: #ef7547; }
+  background-color: $navCol;
+}
 
 .btn-darkOrange:hover {
-  background-color: #90310d; }
+  background-color: $darkOrange;
+}
 
 .btn-orange {
-  background-color: #f3a154; }
+  background-color: $bgCol;
+}
 
 .btn-orange:hover {
-  background-color: #ef7547; }
+  background-color: $navCol;
+}
 
 .btn-quantity {
   font-size: 2rem;
-  width: 3rem; }
+  width: 3rem;
+}
 
 .btn-wide {
   width: 20%;
-  padding: 2%; }
+  padding: 2%;
+}
 
 /* The sidebar menu ------------------------------------------------------------------------------------------------------------------------ */
 .sidenav {
-  height: 100%;
-  /* Full-height: remove this if you want "auto" height */
-  width: 20%;
-  /* Set the width of the sidebar */
-  position: fixed;
-  /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1;
-  /* Stay on top */
-  top: 0;
-  /* Stay at the top */
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 20%; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
   right: 0;
-  background-color: #111;
-  /* Black */
-  overflow-x: hidden;
-  /* Disable horizontal scroll */
-  padding-top: 20px; }
+  background-color: #111; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
 
 /* The navigation menu links */
 .sidenav a {
@@ -156,66 +200,84 @@ a:hover {
   text-decoration: none;
   font-size: 25px;
   color: #818181;
-  display: block; }
+  display: block;
+}
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
-  color: #f1f1f1; }
+  color: #f1f1f1;
+}
 
 /* Style page content */
 .main {
-  margin-left: 160px;
-  /* Same as the width of the sidebar */
-  padding: 0px 10px; }
+  margin-left: 160px; /* Same as the width of the sidebar */
+  padding: 0px 10px;
+}
 
 .mobileNav {
-  display: none; }
+  display: none;
+}
 
 .desktopNav {
-  display: block; }
+  display: block;
+}
 
 /* On smaller screens make the navigation menu better */
 @media screen and (max-width: 480px) {
   .mobileNav {
-    display: block; }
+    display: block;
+  }
 
   .desktopNav {
-    display: none; }
+    display: none;
+  }
 
   .nav-link {
-    font-size: 2rem; }
+    font-size: 2rem;
+  }
 
   .navButton {
-    padding: 5px; } }
+    padding: 5px;
+  }
+}
+
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
 @media screen and (max-width: 480px) {
   .sidenav {
-    padding-top: 15px; }
-
+    padding-top: 15px;
+  }
   .sidenav a {
-    font-size: 18px; }
+    font-size: 18px;
+  }
 
   .btn-wide {
     width: 40%;
-    padding: 2%; } }
+    padding: 2%;
+  }
+}
 /* Scrollbar of the sidebar */
 /* width */
 ::-webkit-scrollbar {
-  width: 10px; }
+  width: 10px;
+}
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; }
+  background: #f1f1f1;
+}
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888; }
+  background: #888;
+}
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; }
-
+  background: #555;
+}
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
+
+// Unused -------------------------------------
 /*
 .carousel-indicators li {
   background-color: #555252;
@@ -229,5 +291,3 @@ a:hover {
   text-shadow: white 1px 1px 2px;
 }
 */
-
-/*# sourceMappingURL=index.css.map */

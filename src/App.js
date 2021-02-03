@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+  Link,
+  Match,
+  useParams,
+  useHistory,
+} from "react-router-dom";
+import { Helmet } from "react-helmet";
+import Home from "./components/Home";
+import { useAuth0 } from "@auth0/auth0-react";
+//import "./App.css";
 
-function App() {
+export default function BasicExample() {
+  const { isLoading } = useAuth0();
+
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <Helmet>
+        <title>Shopping Site</title>
+      </Helmet>
+
+      <BrowserRouter>
+        <Home />
+      </BrowserRouter>
+    </React.Fragment>
   );
 }
-
-export default App;
